@@ -22,9 +22,6 @@ service:
   port:
     port: 8000
 
-ingress:
-  enabled: false
-
 # persistence:
 #   data:
 #     enabled: false
