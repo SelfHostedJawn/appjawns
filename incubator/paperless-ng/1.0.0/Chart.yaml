@@ -7,9 +7,14 @@ appVersion: 1.0.0
 description: paperless App for TrueNAS SCALE
 type: application
 deprecated: false
-home: https://github.com/truecharts/apps/tree/master/charts/${CHARTNAME}
-icon: https://raw.githubusercontent.com/the-paperless-project/paperless/master/src/paperless/static/paperless/img/logo-dark.png?raw=true
+home: https://github.com/SelfHostedJawn/apps/tree/master/charts/incubator/paperless-ng
+icon: https://raw.githubusercontent.com/the-paperless-project/paperless/master/src/paperless/static/paperless/img/logo-dark.png
 keywords:
   - paperless
 sources:
   - https://github.com/jonaswinkler/paperless-ng
+  
+dependencies:
+- name: common
+  repository: https://truecharts.org/
+  version: 6.4.3
