@@ -27,27 +27,27 @@ service:
 #     enabled: false
 #     emptyDir: false
 #     mountPath: /data
-persistence:
-  data:
-    enabled: true
-    mountPath: "/data"
-    type: emptyDir
-  media:
-    enabled: true
-    mountPath: "/media"
-    type: emptyDir
-  consume:
-    enabled: true
-    mountPath: "/consume"
-    type: emptyDir
-  export:
-    enabled: true
-    mountPath: "/export"
-    type: emptyDir
-  db:
-    forceName: "db"
-    enabled: true
-    type: emptyDir
+#persistence:
+#  data:
+#    enabled: true
+#    mountPath: "/data"
+#    type: emptyDir
+#  media:
+#    enabled: true
+#    mountPath: "/media"
+#    type: emptyDir
+#  consume:
+#    enabled: true
+#    mountPath: "/consume"
+#    type: emptyDir
+#  export:
+#    enabled: true
+#    mountPath: "/export"
+#    type: emptyDir
+#  db:
+#    forceName: "db"
+#    enabled: true
+#    type: emptyDir
 
 # Enabled postgres
 # ... for more options see https://github.com/bitnami/charts/tree/master/bitnami/postgresql
