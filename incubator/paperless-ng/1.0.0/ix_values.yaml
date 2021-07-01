@@ -20,6 +20,7 @@ env:
   POSTGRES_USER: paperless
   POSTGRES_DB: paperless
   POSTGRES_PASSWORD: paperless
+  PAPERLESS_DBHOST: paperless-postgresql
 
 
 # Enabled postgres
