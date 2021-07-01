@@ -15,4 +15,4 @@ name: paperless
 sources:
 - https://github.com/jonaswinkler/paperless-ng
 type: application
-version: 1.4.5
+version: 1.0.0
