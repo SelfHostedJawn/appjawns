@@ -11,7 +11,7 @@ icon: https://raw.githubusercontent.com/the-paperless-project/paperless/master/s
 keywords:
 - paperless
 kubeVersion: '>=1.16.0-0'
-name: paperless
+name: paperless-ng
 sources:
 - https://github.com/jonaswinkler/paperless-ng
 type: application
