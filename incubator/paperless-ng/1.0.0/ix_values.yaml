@@ -24,7 +24,7 @@ postgresql:
   postgresqlPassword: paperless
   postgresqlDatabase: paperless
   persistence:
-    enabled: false
+    enabled: true
     existingClaim: db
 ##
 # Most other defaults are set in questions.yaml
