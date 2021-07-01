@@ -3,7 +3,11 @@ appVersion: auto
 dependencies:
 - name: common
   repository: https://truecharts.org/
-  version: 6.4.3
+  version: 6.4.6
+- condition: postgresql.enabled
+  name: postgresql
+  repository: https://charts.bitnami.com/bitnami
+  version: 10.5.1
 deprecated: false
 description: paperless-ng
 home: https://github.com/SelfHostedJawn/apps/tree/master/charts/incubator/paperless-ng
