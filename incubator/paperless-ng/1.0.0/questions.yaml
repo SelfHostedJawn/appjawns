@@ -216,7 +216,7 @@ questions:
                             label: "Container Port"
                             schema:
                               type: int
-                              default: 8080
+                              default: 8000
                               editable: false
                               hidden: true
                           - variable: targetport
@@ -224,7 +224,7 @@ questions:
                             description: "This port exposes the container port on the service"
                             schema:
                               type: int
-                              default: 51080
+                              default: 8000
                               editable: true
                               required: true
                           - variable: nodePort
