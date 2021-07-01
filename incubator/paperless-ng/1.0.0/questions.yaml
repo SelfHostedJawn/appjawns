@@ -98,15 +98,6 @@ questions:
             default: "Etc/UTC"
             $ref:
               - "definitions/timezone"
-        - variable: APP_KEY
-          label: "App Key"
-          description: "Your unique 32 application character key"
-          schema:
-            type: string
-            default: ""
-            min_length: 32
-            max_length: 32
-            required: true
         - variable: UMASK
           label: "UMASK"
           description: "Sets the UMASK env var for LinuxServer.io (compatible) containers"
