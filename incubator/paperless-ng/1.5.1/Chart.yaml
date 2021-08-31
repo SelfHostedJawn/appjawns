@@ -19,4 +19,4 @@ name: paperless-ng
 sources:
 - https://github.com/jonaswinkler/paperless-ng
 type: application
-version: 1.5.0
+version: 1.5.1
