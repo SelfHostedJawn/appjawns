@@ -1,0 +1,72 @@
+##
+# This file contains Values.yaml content that gets added to the output of questions.yaml
+# It's ONLY meant for content that the user is NOT expected to change.
+# Example: Everything under "image" is not included in questions.yaml but is included here.
+##
+
+image:
+  repository: jonaswinkler/paperless-ng
+  pullPolicy: IfNotPresent
+  tag: 1.5.0
+
+strategy:
+  type: Recreate
+
+service:
+  port:
+    port: 8000
+
+env:
+  POSTGRES_USER: paperless
+  POSTGRES_DB: paperless
+  POSTGRES_PASSWORD: paperless
+  PAPERLESS_DBHOST: paperless-postgresql
+
+#envValueFrom:
+#  REDIS_HOST:
+#    secretKeyRef:
+#      name: rediscreds
+#      key: masterhost
+#  REDIS_HOST_PASSWORD:
+#    secretKeyRef:
+#      name: rediscreds
+#      key: redis-password
+
+# Enabled postgres
+# ... for more options see https://github.com/bitnami/charts/tree/master/bitnami/postgresql
+postgresql:
+  enabled: true
+  postgresqlUsername: paperless
+  postgresqlPassword: paperless
+  postgresqlDatabase: paperless
+  persistence:
+    db:
+      storageClass: "SCALE-ZFS"
+    dbbackups:
+      storageClass: "SCALE-ZFS"
+
+# Enabled redis
+# ... for more options see https://github.com/bitnami/charts/tree/master/bitnami/redis
+#redis:
+#  architecture: standalone
+#  enabled: true
+#  auth:
+#    existingSecret: rediscreds
+#    existingSecretPasswordKey: redis-password
+#  master:
+#    persistence:
+#      enabled: true
+#      existingClaim: redismaster
+#  replica:
+#    replicaCount: 0
+#    persistence:
+#      enabled: false
+additionalContainers:
+  - name: broker
+    image: redis:6.0
+    imagePullPolicy: IfNotPresent
+
+##
+# Most other defaults are set in questions.yaml
+# For other options please refer to the wiki, default_values.yaml or the common library chart
+##
