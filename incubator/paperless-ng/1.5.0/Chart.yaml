@@ -1,0 +1,22 @@
+  apiVersion: v2
+appVersion: auto
+dependencies:
+- name: common
+  repository: https://truecharts.org/
+  version: 6.12.2
+- condition: postgresql.enabled
+  name: postgresql
+  repository: https://charts.bitnami.com/bitnami
+  version: 1.5.7
+deprecated: false
+description: paperless-ng
+home: https://github.com/SelfHostedJawn/apps/tree/master/charts/incubator/paperless-ng
+icon: https://raw.githubusercontent.com/the-paperless-project/paperless/master/src/paperless/static/paperless/img/logo-dark.png
+keywords:
+- paperless
+kubeVersion: '>=1.16.0-0'
+name: paperless-ng
+sources:
+- https://github.com/jonaswinkler/paperless-ng
+type: application
+version: 1.5.0
