@@ -22,15 +22,15 @@ env:
   POSTGRES_PASSWORD: paperless
   PAPERLESS_DBHOST: paperless-postgresql
 
-envValueFrom:
-  REDIS_HOST:
-    secretKeyRef:
-      name: rediscreds
-      key: masterhost
-  REDIS_HOST_PASSWORD:
-    secretKeyRef:
-      name: rediscreds
-      key: redis-password
+#envValueFrom:
+#  REDIS_HOST:
+#    secretKeyRef:
+#      name: rediscreds
+#      key: masterhost
+#  REDIS_HOST_PASSWORD:
+#    secretKeyRef:
+#      name: rediscreds
+#      key: redis-password
 
 # Enabled postgres
 # ... for more options see https://github.com/bitnami/charts/tree/master/bitnami/postgresql
@@ -47,20 +47,25 @@ postgresql:
 
 # Enabled redis
 # ... for more options see https://github.com/bitnami/charts/tree/master/bitnami/redis
-redis:
-  architecture: standalone
-  enabled: true
-  auth:
-    existingSecret: rediscreds
-    existingSecretPasswordKey: redis-password
-  master:
-    persistence:
-      enabled: true
-      existingClaim: redismaster
-  replica:
-    replicaCount: 0
-    persistence:
-      enabled: false
+#redis:
+#  architecture: standalone
+#  enabled: true
+#  auth:
+#    existingSecret: rediscreds
+#    existingSecretPasswordKey: redis-password
+#  master:
+#    persistence:
+#      enabled: true
+#      existingClaim: redismaster
+#  replica:
+#    replicaCount: 0
+#    persistence:
+#      enabled: false
+additionalContainers:
+  - name: broker
+    image: redis:6.0
+    imagePullPolicy: IfNotPresent
+
 ##
 # Most other defaults are set in questions.yaml
 # For other options please refer to the wiki, default_values.yaml or the common library chart
