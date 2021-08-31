@@ -22,6 +22,15 @@ env:
   POSTGRES_PASSWORD: paperless
   PAPERLESS_DBHOST: paperless-postgresql
 
+envValueFrom:
+  REDIS_HOST:
+    secretKeyRef:
+      name: rediscreds
+      key: masterhost
+  REDIS_HOST_PASSWORD:
+    secretKeyRef:
+      name: rediscreds
+      key: redis-password
 
 # Enabled postgres
 # ... for more options see https://github.com/bitnami/charts/tree/master/bitnami/postgresql
@@ -41,6 +50,9 @@ postgresql:
 redis:
   architecture: standalone
   enabled: true
+  auth:
+    existingSecret: rediscreds
+    existingSecretPasswordKey: redis-password
   master:
     persistence:
       enabled: true
